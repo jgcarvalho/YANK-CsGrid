@@ -1,0 +1,5 @@
+#$ -S /bin/bash
+#$ -q fila
+#$ -cwd
+#$ -V
+#$ -pe threads 8 

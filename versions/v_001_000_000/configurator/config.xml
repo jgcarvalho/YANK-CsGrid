@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<algoritmo comando="executar.sh" capturar_codigo_de_saida="sim" fornecer_identificador="sim">
+  <formato_no_comando>$NOME_DO_PARAMETRO=$VALOR_DO_PARAMETRO</formato_no_comando>
+
+	<grupo rotulo='Input Parameters (Select)'>
+		<enumeracao nome="RAY_INPUTTYPES" rotulo="Sequence input type" dica="Select Sequence input type" padrao="LoadPairedEndReads">
+			<item_de_enumeracao id="LoadPairedEndReads" rotulo="-p = LoadPairedEndReads (leftSequenceFile rightSequenceFile)" valor="LoadPairedEndReads" dica="Provides two files containing paired-end reads"/>
+			<item_de_enumeracao id="InterleavedSequenceFile" rotulo="-i = InterleavedSequenceFile" valor="InterleavedSequenceFile" dica="Provides one file containing interleaved paired-end reads"/>
+			<item_de_enumeracao id="LoadSingleEndReads" rotulo="-s = LoadSingleEndReads" valor="LoadSingleEndReads" dica="Provides a file containing single-end reads"/>
+		</enumeracao>
+  	</grupo>
+
+  	<grupo rotulo="Input Parameters">	
+		<!--<inteiro nome="numCPU"
+			 rotulo="CPUs number"
+			 minimo="1" 
+			 maximo="16"
+			 dica="For mpi: set the number of CPUs to allocate (min 1 - max 16)"
+ 			 padrao="16"
+			 opcional="true" />
+		-->
+		<!--restraints -->
+		<!--gbsa -->
+		<enumeracao nome="OpenMM GBSA model" rotulo="GBSA" dica="" padrao="">
+			<item_de_enumeracao id="HCT" rotulo="HCT" valor="HCT"/>
+			<item_de_enumeracao id="OBC1" rotulo="OBC1" valor="OBC1"/>
+			<item_de_enumeracao id="OBC2" rotulo="OBC2" valor="OBC2"/>
+			<item_de_enumeracao id="GBn" rotulo="GBn" valor="GBn"/>
+			<item_de_enumeracao id="GBn2" rotulo="GBn2" valor="GBn2"/>
+		</enumeracao>
+		<!--nb method -->
+		<enumeracao nome="OpenMM nonbonded method" rotulo="NBMETHOD" dica="" padrao="">
+			<item_de_enumeracao id="NoCutoff" rotulo="NoCutoff" valor="NoCutoff"/>
+			<item_de_enumeracao id="CutoffPeriodic" rotulo="CutoffPeriodic" valor="CutoffPeriodic"/>
+			<item_de_enumeracao id="PME" rotulo="PME" valor="PME"/>
+			<item_de_enumeracao id="Ewald" rotulo="Ewald" valor="Ewald"/>
+		</enumeracao>
+		<!--cutoff -->
+		<!--constraints -->
+		<!--phase -->
+		<!--temperature -->
+		<!--pressure -->
+		<!-- -->
+
+
+		<inteiro nome="RAY_KMERLENGTH" 
+			 rotulo="Length of k-mers" 
+  			 minimo="2" 
+			 maximo="64"
+			 dica="kmerLength default value is 21"
+ 			 padrao="21"
+ 			 opcional="true" />
+		<arquivo_de_entrada nome="RAY_INPUT_LEFT_SEQUENCE_FILE" 
+			 rotulo='Left sequence input file'
+			 dica='Select or upload the left sequence input file'
+			 opcional="true" oculto="true"/>
+		<arquivo_de_entrada nome="RAY_INPUT_RIGHT_SEQUENCE_FILE" 
+			 rotulo='Right sequence input file'
+			 dica='Select or upload the right sequence input file'
+			 opcional="true" oculto="true"/>
+		<arquivo_de_entrada nome="RAY_INPUT_INTERLEVED_SEQUENCE_FILE" 
+			 rotulo='Interleved sequence input file'
+			 dica='Select or upload the interleved sequence input file'
+			 opcional="true" oculto="true"/>
+		<arquivo_de_entrada nome="RAY_INPUT_SINGLE_END_SEQUENCE_FILE" 
+			 rotulo='Single-end sequence input file'
+			 dica='Select or upload the right sequence input file'
+			 opcional="true" oculto="true"/>
+	</grupo>
+
+  	<grupo rotulo='Output Parameters'>
+		<arquivo_de_saida nome="RAY_OUTPUT" 
+		 	 rotulo="Directory of the output files" 
+		 	 dica="Select the output directory where the result files will be placed" 
+		 	 categoria="diretorio"/>
+    </grupo>
+
+	<exibir>
+		<parametro nome='RAY_INPUT_LEFT_SEQUENCE_FILE'/>
+		<parametro nome='RAY_INPUT_RIGHT_SEQUENCE_FILE'/>
+		<condicao parametro='RAY_INPUTTYPES' valor='LoadPairedEndReads'/>
+	</exibir>
+
+	<exibir>
+		<parametro nome='RAY_INPUT_INTERLEVED_SEQUENCE_FILE'/>
+		<condicao parametro='RAY_INPUTTYPES' valor='InterleavedSequenceFile'/>
+	</exibir>
+
+	<exibir>
+		<parametro nome='RAY_INPUT_SINGLE_END_SEQUENCE_FILE'/>
+		<condicao parametro='RAY_INPUTTYPES' valor='LoadSingleEndReads'/>
+	</exibir>
+
+  	<log/>
+</algoritmo>
