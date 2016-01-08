@@ -1,80 +1,117 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <algoritmo comando="executar.sh" capturar_codigo_de_saida="sim" fornecer_identificador="sim">
   <formato_no_comando>$NOME_DO_PARAMETRO=$VALOR_DO_PARAMETRO</formato_no_comando>
-
+    <!--
 	<grupo rotulo='Input Parameters (Select)'>
+
 		<enumeracao nome="RAY_INPUTTYPES" rotulo="Sequence input type" dica="Select Sequence input type" padrao="LoadPairedEndReads">
 			<item_de_enumeracao id="LoadPairedEndReads" rotulo="-p = LoadPairedEndReads (leftSequenceFile rightSequenceFile)" valor="LoadPairedEndReads" dica="Provides two files containing paired-end reads"/>
 			<item_de_enumeracao id="InterleavedSequenceFile" rotulo="-i = InterleavedSequenceFile" valor="InterleavedSequenceFile" dica="Provides one file containing interleaved paired-end reads"/>
 			<item_de_enumeracao id="LoadSingleEndReads" rotulo="-s = LoadSingleEndReads" valor="LoadSingleEndReads" dica="Provides a file containing single-end reads"/>
 		</enumeracao>
-  	</grupo>
+  </grupo>-->
 
-  	<grupo rotulo="Input Parameters">	
-		<!--<inteiro nome="numCPU"
-			 rotulo="CPUs number"
-			 minimo="1" 
-			 maximo="16"
-			 dica="For mpi: set the number of CPUs to allocate (min 1 - max 16)"
- 			 padrao="16"
-			 opcional="true" />
-		-->
-		<!--restraints -->
-		<!--gbsa -->
-		<enumeracao nome="OpenMM GBSA model" rotulo="GBSA" dica="" padrao="">
-			<item_de_enumeracao id="HCT" rotulo="HCT" valor="HCT"/>
-			<item_de_enumeracao id="OBC1" rotulo="OBC1" valor="OBC1"/>
-			<item_de_enumeracao id="OBC2" rotulo="OBC2" valor="OBC2"/>
-			<item_de_enumeracao id="GBn" rotulo="GBn" valor="GBn"/>
-			<item_de_enumeracao id="GBn2" rotulo="GBn2" valor="GBn2"/>
-		</enumeracao>
-		<!--nb method -->
-		<enumeracao nome="OpenMM nonbonded method" rotulo="NBMETHOD" dica="" padrao="">
-			<item_de_enumeracao id="NoCutoff" rotulo="NoCutoff" valor="NoCutoff"/>
-			<item_de_enumeracao id="CutoffPeriodic" rotulo="CutoffPeriodic" valor="CutoffPeriodic"/>
-			<item_de_enumeracao id="PME" rotulo="PME" valor="PME"/>
-			<item_de_enumeracao id="Ewald" rotulo="Ewald" valor="Ewald"/>
-		</enumeracao>
-		<!--cutoff -->
-		<!--constraints -->
-		<!--phase -->
-		<!--temperature -->
-		<!--pressure -->
-		<!-- -->
+  	<grupo rotulo="Input Parameters">
+  		<!--<inteiro nome="numCPU"
+  			 rotulo="CPUs number"
+  			 minimo="1"
+  			 maximo="16"
+  			 dica="For mpi: set the number of CPUs to allocate (min 1 - max 16)"
+   			 padrao="16"
+  			 opcional="true" />
+  		-->
+      <!-- setupdir -->
+      <arquivo_de_entrada nome="DIRECTORY"
+        rotulo='Setup directory to look for AMBER {receptor|ligand|complex}.{prmtop|inpcrd} files.'
+        dica='Select or upload the directory'
+        categoria="diretorio"/>
+      <!-- ligand -->
+      <texto nome="DSLSTRING" rotulo="Specification of the ligand atoms according to MDTraj DSL syntax." dica=""
+        padrao="MOL" maximo_de_caracteres="3"/>
 
+      <!-- minimize -->
+      <booleano nome="MINIMIZE" rotulo="Minimize configurations before running simulation" dica="" padrao="NO" verdadeiro="YES" falso="NO"/>
+      <!-- equilibrate -->
+      <inteiro nome="NEQUIL" rotulo="Number of equilibration iterations" dica="" padrao="0" minimo="0"/>
 
-		<inteiro nome="RAY_KMERLENGTH" 
-			 rotulo="Length of k-mers" 
-  			 minimo="2" 
+      <!-- steps -->
+      <inteiro nome="NSTEPS" rotulo="Number of steps per iteration" dica="" padrao="500" minimo="1"/>
+      <!-- iterations -->
+      <inteiro nome="NITER" rotulo="Number of iterations to run" dica="" padrao="100" minimo="1"/>
+
+  		<!--restraints -->
+      <enumeracao nome="RESTRAINTS" rotulo="Restraint type to add between protein and ligand in implicit solvent "  dica="" padrao="flat-bottom">
+  			<item_de_enumeracao id="harmonic" rotulo="harmonic" valor="harmonic"/>
+  			<item_de_enumeracao id="flat-bottom" rotulo="flat-bottom" valor="flat-bottom"/>
+  		</enumeracao>
+  		<!--gbsa -->
+  		<enumeracao nome="GBSA" rotulo="OpenMM GBSA model"  dica="" padrao="">
+  			<item_de_enumeracao id="HCT" rotulo="HCT" valor="HCT"/>
+  			<item_de_enumeracao id="OBC1" rotulo="OBC1" valor="OBC1"/>
+  			<item_de_enumeracao id="OBC2" rotulo="OBC2" valor="OBC2"/>
+  			<item_de_enumeracao id="GBn" rotulo="GBn" valor="GBn"/>
+  			<item_de_enumeracao id="GBn2" rotulo="GBn2" valor="GBn2"/>
+  		</enumeracao>
+  		<!--nb method -->
+  		<enumeracao nome="NBMETHOD" rotulo="OpenMM nonbonded method"  dica="" padrao="">
+  			<item_de_enumeracao id="NoCutoff" rotulo="NoCutoff" valor="NoCutoff"/>
+  			<item_de_enumeracao id="CutoffPeriodic" rotulo="CutoffPeriodic" valor="CutoffPeriodic"/>
+  			<item_de_enumeracao id="PME" rotulo="PME" valor="PME"/>
+  			<item_de_enumeracao id="Ewald" rotulo="Ewald" valor="Ewald"/>
+  		</enumeracao>
+  		<!--cutoff -->
+      <real nome="CUTOFF" rotulo=" OpenMM nonbonded cutoff" dica="" padrao="1.0" minimo="0.0"/>
+  		<!--constraints -->
+      <enumeracao nome="CONSTRAINTS" rotulo="OpenMM constraints" dica="" padrao="HBonds">
+        <item_de_enumeracao id="None" rotulo="None" valor="None"/>
+        <item_de_enumeracao id="HBonds" rotulo="HBonds" valor="HBonds"/>
+        <item_de_enumeracao id="AllBonds" rotulo="AllBonds" valor="AllBonds"/>
+        <item_de_enumeracao id="HAngles" rotulo="HAngles" valor="HAngles"/>
+      </enumeracao>
+  		<!--phase -->
+      <!--<enumeracao nome="Resume only specified phase of calculation" rotulo="PHASE" dica="" padrao="">
+        <item_de_enumeracao id="solvent" rotulo="solvent" valor="solvent"/>
+        <item_de_enumeracao id="complex" rotulo="complex" valor="complex"/>
+      </enumeracao> -->
+  		<!--temperature -->
+      <real nome="TEMPERATURE" rotulo="Temperature for simulation" dica="" padrao="298.0" minimo="0.0"/>
+  		<!--pressure -->
+      <real nome="PRESSURE" rotulo="Pressure for simulation" dica="" padrao="1.0" minimo="0.0"/>
+  		<!-- -->
+
+      <!--
+		<inteiro nome="RAY_KMERLENGTH"
+			 rotulo="Length of k-mers"
+  			 minimo="2"
 			 maximo="64"
 			 dica="kmerLength default value is 21"
  			 padrao="21"
  			 opcional="true" />
-		<arquivo_de_entrada nome="RAY_INPUT_LEFT_SEQUENCE_FILE" 
+		<arquivo_de_entrada nome="RAY_INPUT_LEFT_SEQUENCE_FILE"
 			 rotulo='Left sequence input file'
 			 dica='Select or upload the left sequence input file'
 			 opcional="true" oculto="true"/>
-		<arquivo_de_entrada nome="RAY_INPUT_RIGHT_SEQUENCE_FILE" 
+		<arquivo_de_entrada nome="RAY_INPUT_RIGHT_SEQUENCE_FILE"
 			 rotulo='Right sequence input file'
 			 dica='Select or upload the right sequence input file'
 			 opcional="true" oculto="true"/>
-		<arquivo_de_entrada nome="RAY_INPUT_INTERLEVED_SEQUENCE_FILE" 
+		<arquivo_de_entrada nome="RAY_INPUT_INTERLEVED_SEQUENCE_FILE"
 			 rotulo='Interleved sequence input file'
 			 dica='Select or upload the interleved sequence input file'
 			 opcional="true" oculto="true"/>
-		<arquivo_de_entrada nome="RAY_INPUT_SINGLE_END_SEQUENCE_FILE" 
+		<arquivo_de_entrada nome="RAY_INPUT_SINGLE_END_SEQUENCE_FILE"
 			 rotulo='Single-end sequence input file'
 			 dica='Select or upload the right sequence input file'
-			 opcional="true" oculto="true"/>
+			 opcional="true" oculto="true"/>-->
 	</grupo>
 
-  	<grupo rotulo='Output Parameters'>
-		<arquivo_de_saida nome="RAY_OUTPUT" 
-		 	 rotulo="Directory of the output files" 
-		 	 dica="Select the output directory where the result files will be placed" 
+  <grupo rotulo='Output Parameters'>
+		<arquivo_de_saida nome="STORE"
+		 	 rotulo=" Storage directory for NetCDF data files"
+		 	 dica=""
 		 	 categoria="diretorio"/>
-    </grupo>
-
+  </grupo>
+<!--
 	<exibir>
 		<parametro nome='RAY_INPUT_LEFT_SEQUENCE_FILE'/>
 		<parametro nome='RAY_INPUT_RIGHT_SEQUENCE_FILE'/>
@@ -92,4 +129,5 @@
 	</exibir>
 
   	<log/>
+  -->
 </algoritmo>

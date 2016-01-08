@@ -1,0 +1,182 @@
+2016-01-08 10:16:02,360 - INFO - yank.commands.prepare - reading phase solvent: 
+2016-01-08 10:16:02,360 - INFO - yank.commands.prepare - prmtop: setup/solvent.prmtop
+2016-01-08 10:16:02,377 - INFO - yank.commands.prepare - inpcrd: setup/solvent.inpcrd
+2016-01-08 10:16:02,511 - INFO - yank.commands.prepare - reading phase complex: 
+2016-01-08 10:16:02,511 - INFO - yank.commands.prepare - prmtop: setup/complex.prmtop
+2016-01-08 10:16:02,513 - INFO - yank.commands.prepare - inpcrd: setup/complex.inpcrd
+2016-01-08 10:16:02,528 - INFO - yank.commands.prepare - TOTAL ATOMS      :        27
+2016-01-08 10:16:02,529 - INFO - yank.commands.prepare - receptor         :        15
+2016-01-08 10:16:02,529 - INFO - yank.commands.prepare - ligand           :        12
+2016-01-08 10:16:02,529 - DEBUG - yank.yank - phases: ['complex-implicit', 'solvent-implicit']
+2016-01-08 10:16:02,529 - DEBUG - yank.yank - systems: ['complex-implicit', 'solvent-implicit']
+2016-01-08 10:16:02,529 - DEBUG - yank.yank - positions: ['complex-implicit', 'solvent-implicit']
+2016-01-08 10:16:02,529 - DEBUG - yank.yank - atom_indices: ['complex-implicit', 'solvent-implicit']
+2016-01-08 10:16:02,530 - DEBUG - yank.yank - thermodynamic_state: <ThermodynamicState object, temperature = 300 K, pressure = 1 atm>
+2016-01-08 10:16:02,543 - DEBUG - yank.yank - Creating receptor-ligand restraints...
+2016-01-08 10:16:02,544 - DEBUG - yank.restraints - restrained receptor atom: 17
+2016-01-08 10:16:02,544 - DEBUG - yank.restraints - restrained ligand atom: 0
+2016-01-08 10:16:02,660 - DEBUG - yank.restraints - shell_volume = 0.012381 nm^3
+2016-01-08 10:16:02,660 - DEBUG - yank.restraints - box_volume = 1.660539 nm^3
+2016-01-08 10:16:02,661 - DEBUG - yank.restraints - Standard state correction: -4.899 kT
+2016-01-08 10:16:02,661 - DEBUG - yank.restraints - restraints: _computeStandardStateCorrection: 0.116 s elapsed
+2016-01-08 10:16:02,661 - DEBUG - yank.yank - Creating alchemically-modified states...
+2016-01-08 10:16:02,673 - DEBUG - yank.alchemy - Creating alchemically modified system...
+2016-01-08 10:16:02,695 - DEBUG - yank.alchemy - Elapsed time 0.022 s.
+2016-01-08 10:16:02,695 - DEBUG - yank.yank - Creating replica exchange object...
+2016-01-08 10:16:02,718 - DEBUG - yank.repex - from options: collision_rate -> 5.0 /ps
+2016-01-08 10:16:02,719 - DEBUG - yank.repex - from options: minimize -> False
+2016-01-08 10:16:02,719 - DEBUG - yank.repex - from options: number_of_equilibration_iterations -> 0
+2016-01-08 10:16:02,719 - DEBUG - yank.repex - from options: number_of_iterations -> 100
+2016-01-08 10:16:02,719 - DEBUG - yank.repex - from options: displacement_sigma -> 1.0 nm
+2016-01-08 10:16:02,719 - DEBUG - yank.repex - from options: platform -> None
+2016-01-08 10:16:02,719 - DEBUG - yank.repex - from options: show_mixing_statistics -> True
+2016-01-08 10:16:02,719 - DEBUG - yank.repex - from options: timestep -> 2.0 fs
+2016-01-08 10:16:02,726 - DEBUG - yank.sampling - Storing thermodynamic states in NetCDF file...
+2016-01-08 10:16:02,760 - DEBUG - yank.sampling - Serializing system...
+2016-01-08 10:16:02,772 - DEBUG - yank.sampling - Serializing thermodynamic states took 0.046 s.
+2016-01-08 10:16:02,772 - DEBUG - yank.repex - Storing run parameters in NetCDF file...
+2016-01-08 10:16:02,772 - DEBUG - yank.repex - Storing option: collision_rate -> 5.0 (type: <type 'float'>)
+2016-01-08 10:16:02,773 - DEBUG - yank.repex - Storing option: constraint_tolerance -> 1e-06 (type: <type 'float'>)
+2016-01-08 10:16:02,774 - DEBUG - yank.repex - Storing option: timestep -> 2.0 (type: <type 'float'>)
+2016-01-08 10:16:02,774 - DEBUG - yank.repex - Storing option: nsteps_per_iteration -> 500 (type: <type 'int'>)
+2016-01-08 10:16:02,775 - DEBUG - yank.repex - Storing option: number_of_iterations -> 100 (type: <type 'int'>)
+2016-01-08 10:16:02,775 - DEBUG - yank.repex - Storing option: equilibration_timestep -> 1.0 (type: <type 'float'>)
+2016-01-08 10:16:02,776 - DEBUG - yank.repex - Storing option: number_of_equilibration_iterations -> 0 (type: <type 'int'>)
+2016-01-08 10:16:02,776 - DEBUG - yank.repex - Storing option: title -> Replica-exchange simulation created using ReplicaExchange class of repex.py on Fri Jan  8 10:16:02 2016 (type: <type 'str'>)
+2016-01-08 10:16:02,777 - DEBUG - yank.repex - Storing option: minimize -> 0 (type: <type 'bool'>)
+2016-01-08 10:16:02,778 - DEBUG - yank.repex - Storing option: replica_mixing_scheme -> swap-all (type: <type 'str'>)
+2016-01-08 10:16:02,780 - DEBUG - yank.repex - Storing option: online_analysis -> 0 (type: <type 'bool'>)
+2016-01-08 10:16:02,780 - DEBUG - yank.repex - Storing option: show_mixing_statistics -> 1 (type: <type 'bool'>)
+2016-01-08 10:16:02,782 - DEBUG - yank.repex - Storing option: mc_atoms -> [ 0  1  2  3  4  5  6  7  8  9 10 11] (type: <type 'numpy.ndarray'>)
+2016-01-08 10:16:02,811 - DEBUG - yank.repex - Storing option: mc_displacement -> 1 (type: <type 'bool'>)
+2016-01-08 10:16:02,812 - DEBUG - yank.repex - Storing option: mc_rotation -> 1 (type: <type 'bool'>)
+2016-01-08 10:16:02,812 - DEBUG - yank.repex - Storing option: displacement_sigma -> 1.0 (type: <type 'float'>)
+2016-01-08 10:16:02,813 - DEBUG - yank.repex - Storing option: displacement_trials_accepted -> 0 (type: <type 'int'>)
+2016-01-08 10:16:02,813 - DEBUG - yank.repex - Storing option: rotation_trials_accepted -> 0 (type: <type 'int'>)
+2016-01-08 10:16:02,873 - DEBUG - yank.repex - Writing data to NetCDF file took 0.058 s (0.000 s for sync)
+2016-01-08 10:16:02,881 - DEBUG - yank.yank - Creating alchemically-modified states...
+2016-01-08 10:16:02,888 - DEBUG - yank.alchemy - Creating alchemically modified system...
+2016-01-08 10:16:02,899 - DEBUG - yank.alchemy - Elapsed time 0.011 s.
+2016-01-08 10:16:02,899 - DEBUG - yank.yank - Creating replica exchange object...
+2016-01-08 10:16:02,915 - DEBUG - yank.repex - from options: collision_rate -> 5.0 /ps
+2016-01-08 10:16:02,915 - DEBUG - yank.repex - from options: minimize -> False
+2016-01-08 10:16:02,915 - DEBUG - yank.repex - from options: number_of_equilibration_iterations -> 0
+2016-01-08 10:16:02,915 - DEBUG - yank.repex - from options: number_of_iterations -> 100
+2016-01-08 10:16:02,915 - DEBUG - yank.repex - from options: displacement_sigma -> 1.0 nm
+2016-01-08 10:16:02,915 - DEBUG - yank.repex - from options: platform -> None
+2016-01-08 10:16:02,916 - DEBUG - yank.repex - from options: show_mixing_statistics -> True
+2016-01-08 10:16:02,916 - DEBUG - yank.repex - from options: timestep -> 2.0 fs
+2016-01-08 10:16:02,920 - DEBUG - yank.sampling - Storing thermodynamic states in NetCDF file...
+2016-01-08 10:16:02,942 - DEBUG - yank.sampling - Serializing system...
+2016-01-08 10:16:02,949 - DEBUG - yank.sampling - Serializing thermodynamic states took 0.029 s.
+2016-01-08 10:16:02,949 - DEBUG - yank.repex - Storing run parameters in NetCDF file...
+2016-01-08 10:16:02,949 - DEBUG - yank.repex - Storing option: collision_rate -> 5.0 (type: <type 'float'>)
+2016-01-08 10:16:02,950 - DEBUG - yank.repex - Storing option: constraint_tolerance -> 1e-06 (type: <type 'float'>)
+2016-01-08 10:16:02,950 - DEBUG - yank.repex - Storing option: timestep -> 2.0 (type: <type 'float'>)
+2016-01-08 10:16:02,951 - DEBUG - yank.repex - Storing option: nsteps_per_iteration -> 500 (type: <type 'int'>)
+2016-01-08 10:16:02,951 - DEBUG - yank.repex - Storing option: number_of_iterations -> 100 (type: <type 'int'>)
+2016-01-08 10:16:02,951 - DEBUG - yank.repex - Storing option: equilibration_timestep -> 1.0 (type: <type 'float'>)
+2016-01-08 10:16:02,952 - DEBUG - yank.repex - Storing option: number_of_equilibration_iterations -> 0 (type: <type 'int'>)
+2016-01-08 10:16:02,952 - DEBUG - yank.repex - Storing option: title -> Replica-exchange simulation created using ReplicaExchange class of repex.py on Fri Jan  8 10:16:02 2016 (type: <type 'str'>)
+2016-01-08 10:16:02,953 - DEBUG - yank.repex - Storing option: minimize -> 0 (type: <type 'bool'>)
+2016-01-08 10:16:02,954 - DEBUG - yank.repex - Storing option: replica_mixing_scheme -> swap-all (type: <type 'str'>)
+2016-01-08 10:16:02,954 - DEBUG - yank.repex - Storing option: online_analysis -> 0 (type: <type 'bool'>)
+2016-01-08 10:16:02,955 - DEBUG - yank.repex - Storing option: show_mixing_statistics -> 1 (type: <type 'bool'>)
+2016-01-08 10:16:02,955 - DEBUG - yank.repex - Storing option: mc_atoms -> None (type: <type 'NoneType'>)
+2016-01-08 10:16:02,956 - DEBUG - yank.repex - Storing option: mc_displacement -> 0 (type: <type 'bool'>)
+2016-01-08 10:16:02,956 - DEBUG - yank.repex - Storing option: mc_rotation -> 0 (type: <type 'bool'>)
+2016-01-08 10:16:02,957 - DEBUG - yank.repex - Storing option: displacement_sigma -> 1.0 (type: <type 'float'>)
+2016-01-08 10:16:02,957 - DEBUG - yank.repex - Storing option: displacement_trials_accepted -> 0 (type: <type 'int'>)
+2016-01-08 10:16:02,958 - DEBUG - yank.repex - Storing option: rotation_trials_accepted -> 0 (type: <type 'int'>)
+2016-01-08 10:16:02,993 - DEBUG - yank.repex - Writing data to NetCDF file took 0.034 s (0.001 s for sync)
+2016-01-08 10:16:59,873 - INFO - yank.commands.prepare - reading phase solvent: 
+2016-01-08 10:16:59,874 - INFO - yank.commands.prepare - prmtop: setup/solvent.prmtop
+2016-01-08 10:16:59,883 - INFO - yank.commands.prepare - inpcrd: setup/solvent.inpcrd
+2016-01-08 10:16:59,910 - INFO - yank.commands.prepare - reading phase complex: 
+2016-01-08 10:16:59,911 - INFO - yank.commands.prepare - prmtop: setup/complex.prmtop
+2016-01-08 10:16:59,913 - INFO - yank.commands.prepare - inpcrd: setup/complex.inpcrd
+2016-01-08 10:16:59,933 - INFO - yank.commands.prepare - TOTAL ATOMS      :        27
+2016-01-08 10:16:59,933 - INFO - yank.commands.prepare - receptor         :        15
+2016-01-08 10:16:59,933 - INFO - yank.commands.prepare - ligand           :        12
+2016-01-08 10:16:59,934 - DEBUG - yank.yank - phases: ['complex-implicit', 'solvent-implicit']
+2016-01-08 10:16:59,934 - DEBUG - yank.yank - systems: ['complex-implicit', 'solvent-implicit']
+2016-01-08 10:16:59,934 - DEBUG - yank.yank - positions: ['complex-implicit', 'solvent-implicit']
+2016-01-08 10:16:59,934 - DEBUG - yank.yank - atom_indices: ['complex-implicit', 'solvent-implicit']
+2016-01-08 10:16:59,934 - DEBUG - yank.yank - thermodynamic_state: <ThermodynamicState object, temperature = 302.5 K, pressure = 1 atm>
+2016-01-08 10:16:59,950 - DEBUG - yank.yank - Creating receptor-ligand restraints...
+2016-01-08 10:16:59,952 - DEBUG - yank.restraints - restrained receptor atom: 17
+2016-01-08 10:16:59,952 - DEBUG - yank.restraints - restrained ligand atom: 0
+2016-01-08 10:17:00,077 - DEBUG - yank.restraints - shell_volume = 0.012381 nm^3
+2016-01-08 10:17:00,077 - DEBUG - yank.restraints - box_volume = 1.660539 nm^3
+2016-01-08 10:17:00,078 - DEBUG - yank.restraints - Standard state correction: -4.899 kT
+2016-01-08 10:17:00,078 - DEBUG - yank.restraints - restraints: _computeStandardStateCorrection: 0.125 s elapsed
+2016-01-08 10:17:00,078 - DEBUG - yank.yank - Creating alchemically-modified states...
+2016-01-08 10:17:00,091 - DEBUG - yank.alchemy - Creating alchemically modified system...
+2016-01-08 10:17:00,118 - DEBUG - yank.alchemy - Elapsed time 0.026 s.
+2016-01-08 10:17:00,118 - DEBUG - yank.yank - Creating replica exchange object...
+2016-01-08 10:17:00,145 - DEBUG - yank.repex - from options: collision_rate -> 5.0 /ps
+2016-01-08 10:17:00,146 - DEBUG - yank.repex - from options: minimize -> False
+2016-01-08 10:17:00,146 - DEBUG - yank.repex - from options: number_of_equilibration_iterations -> 0
+2016-01-08 10:17:00,146 - DEBUG - yank.repex - from options: number_of_iterations -> 100
+2016-01-08 10:17:00,146 - DEBUG - yank.repex - from options: displacement_sigma -> 1.0 nm
+2016-01-08 10:17:00,146 - DEBUG - yank.repex - from options: platform -> None
+2016-01-08 10:17:00,146 - DEBUG - yank.repex - from options: show_mixing_statistics -> True
+2016-01-08 10:17:00,146 - DEBUG - yank.repex - from options: timestep -> 2.0 fs
+2016-01-08 10:17:00,153 - DEBUG - yank.sampling - Storing thermodynamic states in NetCDF file...
+2016-01-08 10:17:00,189 - DEBUG - yank.sampling - Serializing system...
+2016-01-08 10:17:00,202 - DEBUG - yank.sampling - Serializing thermodynamic states took 0.048 s.
+2016-01-08 10:17:00,202 - DEBUG - yank.repex - Storing run parameters in NetCDF file...
+2016-01-08 10:17:00,202 - DEBUG - yank.repex - Storing option: collision_rate -> 5.0 (type: <type 'float'>)
+2016-01-08 10:17:00,203 - DEBUG - yank.repex - Storing option: constraint_tolerance -> 1e-06 (type: <type 'float'>)
+2016-01-08 10:17:00,204 - DEBUG - yank.repex - Storing option: timestep -> 2.0 (type: <type 'float'>)
+2016-01-08 10:17:00,204 - DEBUG - yank.repex - Storing option: nsteps_per_iteration -> 500 (type: <type 'int'>)
+2016-01-08 10:17:00,205 - DEBUG - yank.repex - Storing option: number_of_iterations -> 100 (type: <type 'int'>)
+2016-01-08 10:17:00,205 - DEBUG - yank.repex - Storing option: equilibration_timestep -> 1.0 (type: <type 'float'>)
+2016-01-08 10:17:00,206 - DEBUG - yank.repex - Storing option: number_of_equilibration_iterations -> 0 (type: <type 'int'>)
+2016-01-08 10:17:00,206 - DEBUG - yank.repex - Storing option: title -> Replica-exchange simulation created using ReplicaExchange class of repex.py on Fri Jan  8 10:17:00 2016 (type: <type 'str'>)
+2016-01-08 10:17:00,207 - DEBUG - yank.repex - Storing option: minimize -> 0 (type: <type 'bool'>)
+2016-01-08 10:17:00,208 - DEBUG - yank.repex - Storing option: replica_mixing_scheme -> swap-all (type: <type 'str'>)
+2016-01-08 10:17:00,209 - DEBUG - yank.repex - Storing option: online_analysis -> 0 (type: <type 'bool'>)
+2016-01-08 10:17:00,209 - DEBUG - yank.repex - Storing option: show_mixing_statistics -> 1 (type: <type 'bool'>)
+2016-01-08 10:17:00,211 - DEBUG - yank.repex - Storing option: mc_atoms -> [ 0  1  2  3  4  5  6  7  8  9 10 11] (type: <type 'numpy.ndarray'>)
+2016-01-08 10:17:00,239 - DEBUG - yank.repex - Storing option: mc_displacement -> 1 (type: <type 'bool'>)
+2016-01-08 10:17:00,240 - DEBUG - yank.repex - Storing option: mc_rotation -> 1 (type: <type 'bool'>)
+2016-01-08 10:17:00,241 - DEBUG - yank.repex - Storing option: displacement_sigma -> 1.0 (type: <type 'float'>)
+2016-01-08 10:17:00,242 - DEBUG - yank.repex - Storing option: displacement_trials_accepted -> 0 (type: <type 'int'>)
+2016-01-08 10:17:00,242 - DEBUG - yank.repex - Storing option: rotation_trials_accepted -> 0 (type: <type 'int'>)
+2016-01-08 10:17:00,308 - DEBUG - yank.repex - Writing data to NetCDF file took 0.064 s (0.001 s for sync)
+2016-01-08 10:17:00,317 - DEBUG - yank.yank - Creating alchemically-modified states...
+2016-01-08 10:17:00,324 - DEBUG - yank.alchemy - Creating alchemically modified system...
+2016-01-08 10:17:00,335 - DEBUG - yank.alchemy - Elapsed time 0.011 s.
+2016-01-08 10:17:00,336 - DEBUG - yank.yank - Creating replica exchange object...
+2016-01-08 10:17:00,353 - DEBUG - yank.repex - from options: collision_rate -> 5.0 /ps
+2016-01-08 10:17:00,353 - DEBUG - yank.repex - from options: minimize -> False
+2016-01-08 10:17:00,353 - DEBUG - yank.repex - from options: number_of_equilibration_iterations -> 0
+2016-01-08 10:17:00,353 - DEBUG - yank.repex - from options: number_of_iterations -> 100
+2016-01-08 10:17:00,353 - DEBUG - yank.repex - from options: displacement_sigma -> 1.0 nm
+2016-01-08 10:17:00,353 - DEBUG - yank.repex - from options: platform -> None
+2016-01-08 10:17:00,354 - DEBUG - yank.repex - from options: show_mixing_statistics -> True
+2016-01-08 10:17:00,354 - DEBUG - yank.repex - from options: timestep -> 2.0 fs
+2016-01-08 10:17:00,358 - DEBUG - yank.sampling - Storing thermodynamic states in NetCDF file...
+2016-01-08 10:17:00,381 - DEBUG - yank.sampling - Serializing system...
+2016-01-08 10:17:00,388 - DEBUG - yank.sampling - Serializing thermodynamic states took 0.030 s.
+2016-01-08 10:17:00,388 - DEBUG - yank.repex - Storing run parameters in NetCDF file...
+2016-01-08 10:17:00,389 - DEBUG - yank.repex - Storing option: collision_rate -> 5.0 (type: <type 'float'>)
+2016-01-08 10:17:00,389 - DEBUG - yank.repex - Storing option: constraint_tolerance -> 1e-06 (type: <type 'float'>)
+2016-01-08 10:17:00,390 - DEBUG - yank.repex - Storing option: timestep -> 2.0 (type: <type 'float'>)
+2016-01-08 10:17:00,390 - DEBUG - yank.repex - Storing option: nsteps_per_iteration -> 500 (type: <type 'int'>)
+2016-01-08 10:17:00,391 - DEBUG - yank.repex - Storing option: number_of_iterations -> 100 (type: <type 'int'>)
+2016-01-08 10:17:00,391 - DEBUG - yank.repex - Storing option: equilibration_timestep -> 1.0 (type: <type 'float'>)
+2016-01-08 10:17:00,392 - DEBUG - yank.repex - Storing option: number_of_equilibration_iterations -> 0 (type: <type 'int'>)
+2016-01-08 10:17:00,392 - DEBUG - yank.repex - Storing option: title -> Replica-exchange simulation created using ReplicaExchange class of repex.py on Fri Jan  8 10:17:00 2016 (type: <type 'str'>)
+2016-01-08 10:17:00,393 - DEBUG - yank.repex - Storing option: minimize -> 0 (type: <type 'bool'>)
+2016-01-08 10:17:00,394 - DEBUG - yank.repex - Storing option: replica_mixing_scheme -> swap-all (type: <type 'str'>)
+2016-01-08 10:17:00,394 - DEBUG - yank.repex - Storing option: online_analysis -> 0 (type: <type 'bool'>)
+2016-01-08 10:17:00,395 - DEBUG - yank.repex - Storing option: show_mixing_statistics -> 1 (type: <type 'bool'>)
+2016-01-08 10:17:00,395 - DEBUG - yank.repex - Storing option: mc_atoms -> None (type: <type 'NoneType'>)
+2016-01-08 10:17:00,396 - DEBUG - yank.repex - Storing option: mc_displacement -> 0 (type: <type 'bool'>)
+2016-01-08 10:17:00,396 - DEBUG - yank.repex - Storing option: mc_rotation -> 0 (type: <type 'bool'>)
+2016-01-08 10:17:00,397 - DEBUG - yank.repex - Storing option: displacement_sigma -> 1.0 (type: <type 'float'>)
+2016-01-08 10:17:00,397 - DEBUG - yank.repex - Storing option: displacement_trials_accepted -> 0 (type: <type 'int'>)
+2016-01-08 10:17:00,398 - DEBUG - yank.repex - Storing option: rotation_trials_accepted -> 0 (type: <type 'int'>)
+2016-01-08 10:17:00,437 - DEBUG - yank.repex - Writing data to NetCDF file took 0.038 s (0.000 s for sync)
