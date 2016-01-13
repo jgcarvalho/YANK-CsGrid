@@ -106,6 +106,8 @@ if [ "${PRESSURE%.*}" -gt 0 ]; then
 fi
 
 COMMAND="$COMMAND; yank run --store=$STORE --verbose; yank analyze --store=$STORE"
+####mudança para utilizar mpi ao invés de threads
+#COMMAND="$COMMAND; build_mpirun_configfile --mpitype=conda \"yank run --store=$STORE --verbose --mpi\"; mpirun -configfile configfile; yank analyze --store=$STORE"
 
 
 echo $COMMAND
