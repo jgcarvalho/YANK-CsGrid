@@ -45,7 +45,7 @@
   			<item_de_enumeracao id="flat-bottom" rotulo="flat-bottom" valor="flat-bottom"/>
   		</enumeracao>
   		<!--gbsa -->
-  		<enumeracao nome="GBSA" rotulo="OpenMM GBSA model"  dica="" padrao="">
+  		<enumeracao nome="GBSA" rotulo="OpenMM GBSA model"  dica="" padrao="OBC2">
   			<item_de_enumeracao id="HCT" rotulo="HCT" valor="HCT"/>
   			<item_de_enumeracao id="OBC1" rotulo="OBC1" valor="OBC1"/>
   			<item_de_enumeracao id="OBC2" rotulo="OBC2" valor="OBC2"/>
@@ -53,7 +53,7 @@
   			<item_de_enumeracao id="GBn2" rotulo="GBn2" valor="GBn2"/>
   		</enumeracao>
   		<!--nb method -->
-  		<enumeracao nome="NBMETHOD" rotulo="OpenMM nonbonded method"  dica="" padrao="">
+  		<enumeracao nome="NBMETHOD" rotulo="OpenMM nonbonded method"  dica="" padrao="NoCutoff">
   			<item_de_enumeracao id="NoCutoff" rotulo="NoCutoff" valor="NoCutoff"/>
   			<item_de_enumeracao id="CutoffPeriodic" rotulo="CutoffPeriodic" valor="CutoffPeriodic"/>
   			<item_de_enumeracao id="PME" rotulo="PME" valor="PME"/>
